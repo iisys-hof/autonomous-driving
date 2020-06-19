@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Jana</folder>
+	<filename>1540985965837_astrargb.png</filename>
+	<path>C:\Bilder1\Jana\1540985965837_astrargb.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bluecone</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>41</xmin>
+			<ymin>67</ymin>
+			<xmax>117</xmax>
+			<ymax>206</ymax>
+		</bndbox>
+	</object>
+</annotation>

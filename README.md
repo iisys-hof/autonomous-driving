@@ -5,7 +5,7 @@ This is the autonomous driving project of FH Hof. The code here is the result of
 
 This is the autonomous-driving test car
 
-![car.png]
+![Car](car.png)
 
 If you want to use it, it is strongly recommended to use Windows and clone it into the D:\Projekte folder.
 
