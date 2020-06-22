@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <title>Autonomous Driving - IISYS</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+</head>
+
+<body>
+  <h1>Autonomous Driving - IISYS</h1>
+  <div class="mb-3">
+    <button id="autonomous_driving" class="btn btn-lg btn-primary">Autonomous Driving</button> 
+    <button id="manuel_driving" class="btn btn-lg btn-success">Manuel Driving</button> 
+    <button id="reset_map" class="btn btn-lg btn-danger">Reset Map</button> 
+    <button id="curve_test_mode" class="btn btn-lg btn-dark">Test Curve</button> 
+  </div>
+  <div>
+    <img id="bg" src="{{ url_for('video_feed') }}">
+  </div>
+</body>
+
+<script>
+  document.getElementById('autonomous_driving').onclick = function() {fetch(`${window.origin}{{ url_for('autonomous_driving') }}`, { method: "GET"  });};
+  document.getElementById('manuel_driving').onclick = function() {fetch(`${window.origin}{{ url_for('manuel_driving') }}`, { method: "GET"  });};
+  document.getElementById('reset_map').onclick = function() {fetch(`${window.origin}{{ url_for('reset_map') }}`, { method: "GET"  });};
+  document.getElementById('curve_test_mode').onclick = function() {fetch(`${window.origin}{{ url_for('curve_test_mode') }}`, { method: "GET"  });};
+
+  let map = {};
+  let lastResponse = ''
+  onkeydown = onkeyup = function (e) {
+    map[e.keyCode] = e.type == 'keydown';
+
+    let response = {
+      'left': !!map[37],
+      'up': !!map[38],
+      'right': !!map[39],
+      'down': !!map[40]
+    }
+    let actualResponse = JSON.stringify(response)
+    if(actualResponse !== lastResponse){
+      lastResponse = actualResponse
+      fetch(`${window.origin}{{ url_for('move_command') }}`, {
+        method: "POST",
+        credentials: "include",
+        body: actualResponse,
+        cache: "no-cache",
+        headers: new Headers({
+          "content-type": "application/json"
+        })
+      })
+    }
+  }
+</script>
+
+</html>
