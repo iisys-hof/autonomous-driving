@@ -1,0 +1,3 @@
+# i use the tutorial form https://coral.ai/docs/edgetpu/compiler/ But it only runs on linux
+
+#edgetpu_compiler [options] model...
