@@ -7,7 +7,7 @@ This is the autonomous-driving test car
 
 ![Car](car.png)
 
-If you want to use it, it is strongly recommended to use Windows and clone it into the D:\Projekte folder.
+We tested it using Windows 10 operating system. If you clone it to “D:\Projekte” you will have the least amount of hassle. It should however run on Linux as well. 
 
 
 We have some sub projects with different tasks:
